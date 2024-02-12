@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alzheimer Classification</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet"> 
+	<style>
+	
+	.bg-dark {
+		background-color: 	#4b6ebb!important;
+	}
+	#result {
+		color: white;
+	}
+	body
+{
+    background-image: url('https://neurosurgerycnj.com/wp-content/uploads/brizy/imgs/brain-surgery-dyes.jpg-545x436x0x13x545x409x1653402574.webp');
+    background-size: cover;
+
+}
+background-image{
+	opacity: 1.0;
+}
+
+	</style>
+</head>
+
+<body style="opacity: 1.0;text-align: center;">
+    
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+			<a class="navbar-brand" href="#"> <h1> Alzheimer Disease prediction</h1></a>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="content" style="margin-top:2em">
+		<div class="container">
+		  <div class="row">
+			<div class="col-sm-6 bd">
+			  <h1 style="color: aliceblue;">Alzheimer disease prediction website</h1>
+			  <br>
+			 <h5> <p style="color: aliceblue;">Alzheimer's disease (AD) is a progressive and irreversible neurological disorder that affects the brain, leading to memory loss, cognitive impairment, and changes in behavior and personality. The exact cause of Alzheimer's disease is not yet fully understood,
+				but it is believed to be influenced by a combination of genetic, environmental,
+				and lifestyle factors. The early symptoms of Alzheimer's disease may include
+				mild memory loss, difficulty with problem-solving, and changes in mood or behavior.
+				As the disease progresses, these symptoms become more severe, with individuals experiencing
+				significant memory loss,difficulty communicating, and a loss 
+				of the ability to perform daily activities.</p></h5>
+			      
+			</div>
+			<div class="col-sm-6">
+				<div>
+					<h2 style="color: aliceblue;">Upload Image Here To Identify the type of Alzheimer disease</h2>
+			<form action = "http://localhost:5000/" id="upload-file" method="post" enctype="multipart/form-data">
+				<label for="imageUpload" class="upload-label">
+					<h1 style="color: white;">Choose the image...</h1>
+				</label>
+				<input type="file" name="image" id="imageUpload" accept=".png, .jpg, .jpeg">
+			</form>
+			
+
+			<div class="image-section" style="display:none;">
+				<div class="img-preview">
+					<div id="imagePreview">
+					</div>
+				</div>
+				<div style="color: darkred;">
+					<h1><button type="button" class="btn btn-info btn-lg " id="btn-predict">Predict!</button></h1>
+				</div>
+			</div>
+
+			<div class="loader" style="display:none;"></div>
+
+			<h3>
+				<span id="result"> </span>
+			</h3>
+
+		</div>
+			</div>
+			 
+		  </div>
+		</div>
+		</div>
+    </div>
+</body>
+
+<footer style="color:white">
+    <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script>    
+</footer>
+
+</html>
